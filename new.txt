@@ -1,0 +1,9 @@
+The answer is there, git is telling you to fetch first.
+
+Probably somebody else has pushed to master already, and your commit is behind. Therefore you have to fetch, merge the changeset, and then you'll be able to push again.
+
+If you don't (or even worse, if you force it by using the --force option), you can mess up the commit history.
+
+EDIT: I get into more detail about the last point, since a guy here just gave the Very Bad Advice of using the --force option.
+
+As git is a DVCS, ideally many other developers are working on the same project as you, using the same repository (or a fork of it). If you overwrite forcefully with your changeset, your repository will mismatch other people's, because "you rewrote history". You will make other people unhappy and the repository will suffer. Probably a kitten in the world will cry, too.
